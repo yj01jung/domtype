@@ -15087,71 +15087,6 @@ declare var Range: {
   toString(): string;
 };
 
-declare var ReadableByteStreamController: {
-  prototype: ReadableByteStreamController;
-  new (): ReadableByteStreamController;
-};
-
-interface ReadableStreamBYOBReader {
-  readonly closed: Promise<void>;
-  cancel(reason?: any): Promise<void>;
-  read<T extends ArrayBufferView>(
-    view: T
-  ): Promise<ReadableStreamReadResult<T>>;
-  releaseLock(): void;
-}
-
-declare var ReadableStreamBYOBReader: {
-  prototype: ReadableStreamBYOBReader;
-  new (): ReadableStreamBYOBReader;
-};
-
-interface ReadableStreamBYOBRequest {
-  readonly view: ArrayBufferView;
-  respond(bytesWritten: number): void;
-  respondWithNewView(view: ArrayBufferView): void;
-}
-
-declare var ReadableStreamBYOBRequest: {
-  prototype: ReadableStreamBYOBRequest;
-  new (): ReadableStreamBYOBRequest;
-};
-
-interface ReadableStreamDefaultController<R = any> {
-  readonly desiredSize: number | null;
-  close(): void;
-  enqueue(chunk: R): void;
-  error(error?: any): void;
-}
-
-declare var ReadableStreamDefaultController: {
-  prototype: ReadableStreamDefaultController;
-  new (): ReadableStreamDefaultController;
-};
-
-interface ReadableStreamDefaultReader<R = any> {
-  readonly closed: Promise<void>;
-  cancel(reason?: any): Promise<void>;
-  read(): Promise<ReadableStreamReadResult<R>>;
-  releaseLock(): void;
-}
-
-declare var ReadableStreamDefaultReader: {
-  prototype: ReadableStreamDefaultReader;
-  new (): ReadableStreamDefaultReader;
-};
-
-interface ReadableStreamReader<R = any> {
-  cancel(): Promise<void>;
-  read(): Promise<ReadableStreamReadResult<R>>;
-  releaseLock(): void;
-}
-
-declare var ReadableStreamReader: {
-  prototype: ReadableStreamReader;
-  new (): ReadableStreamReader;
-};
-
 /** Provides access to the properties of <a> element, as well as methods to manipulate them. */
 interface SVGAElement extends SVGGraphicsElement, SVGURIReference {
   readonly target: SVGAnimatedString;
@@ -25392,7 +25327,7 @@ type XMLHttpRequestResponseType =
 /////////////////////////////
 
 interface Indexable<T> {
-  [n: number]: T
+  [n: number]: T;
 }
 interface AudioParam {
   setValueCurveAtTime(
