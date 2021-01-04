@@ -4102,32 +4102,6 @@ declare var CredentialsContainer: {
   new (): CredentialsContainer;
 };
 
-/** Basic cryptography features available in the current context. It allows access to a cryptographically strong random number generator and to cryptographic primitives. */
-interface Crypto {
-  readonly subtle: SubtleCrypto;
-  getRandomValues<
-    T extends
-      | Int8Array
-      | Int16Array
-      | Int32Array
-      | Uint8Array
-      | Uint16Array
-      | Uint32Array
-      | Uint8ClampedArray
-      | Float32Array
-      | Float64Array
-      | DataView
-      | null
-  >(
-    array: T
-  ): T;
-}
-
-declare var Crypto: {
-  prototype: Crypto;
-  new (): Crypto;
-};
-
 /** The CryptoKey dictionary of the Web Crypto API represents a cryptographic key. */
 interface CryptoKey {
   readonly algorithm: KeyAlgorithm;
@@ -15112,14 +15086,6 @@ declare var Range: {
   toString(): string;
 };
 
-interface ReadableByteStreamController {
-  readonly byobRequest: ReadableStreamBYOBRequest | undefined;
-  readonly desiredSize: number | null;
-  close(): void;
-  enqueue(chunk: ArrayBufferView): void;
-  error(error?: any): void;
-}
-
 declare var ReadableByteStreamController: {
   prototype: ReadableByteStreamController;
   new (): ReadableByteStreamController;
@@ -24266,51 +24232,8 @@ interface RTCSessionDescriptionCallback {
 interface RTCStatsCallback {
   (report: RTCStatsReport): void;
 }
-
-interface ReadableByteStreamControllerCallback {
-  (controller: ReadableByteStreamController): void | PromiseLike<void>;
-}
-
-interface ReadableStreamDefaultControllerCallback<R> {
-  (controller: ReadableStreamDefaultController<R>): void | PromiseLike<void>;
-}
-
-interface ReadableStreamErrorCallback {
-  (reason: any): void | PromiseLike<void>;
-}
-
-interface TransformStreamDefaultControllerCallback<O> {
-  (controller: TransformStreamDefaultController<O>): void | PromiseLike<void>;
-}
-
-interface TransformStreamDefaultControllerTransformCallback<I, O> {
-  (
-    chunk: I,
-    controller: TransformStreamDefaultController<O>
-  ): void | PromiseLike<void>;
-}
-
 interface VoidFunction {
   (): void;
-}
-
-interface WritableStreamDefaultControllerCloseCallback {
-  (): void | PromiseLike<void>;
-}
-
-interface WritableStreamDefaultControllerStartCallback {
-  (controller: WritableStreamDefaultController): void | PromiseLike<void>;
-}
-
-interface WritableStreamDefaultControllerWriteCallback<W> {
-  (
-    chunk: W,
-    controller: WritableStreamDefaultController
-  ): void | PromiseLike<void>;
-}
-
-interface WritableStreamErrorCallback {
-  (reason: any): void | PromiseLike<void>;
 }
 
 interface HTMLElementTagNameMap {
@@ -24619,7 +24542,7 @@ declare var styleMedia: StyleMedia;
 declare var toolbar: BarProp;
 declare var top: Window;
 declare var visualViewport: VisualViewport;
-declare var window: Window & typeof globalThis;
+
 declare function alert(message?: any): void;
 declare function blur(): void;
 /** @deprecated */
