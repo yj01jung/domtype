@@ -2,6 +2,12 @@
 
 Deno compatible lib.dom.d.ts
 
+### CHANGELOG
+
+#### 1.7.0
+
+- Deno 1.7.0 compat
+
 ### How to use
 
 ```ts
