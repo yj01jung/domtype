@@ -4,7 +4,7 @@ Deno compatible lib.dom.d.ts
 
 ### CHANGELOG
 
-#### 1.7.0
+#### 1.0.4
 
 - Deno 1.7.0 compat
 
